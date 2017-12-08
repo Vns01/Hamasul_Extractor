@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HamasulRegex", "HamasulRegex\HamasulRegex.csproj", "{DEDCDC18-758D-41BC-A626-E7B8EB5225C2}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{83CF613B-E3CE-4D05-8BEC-77298CD70506}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{DEDCDC18-758D-41BC-A626-E7B8EB5225C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEDCDC18-758D-41BC-A626-E7B8EB5225C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DEDCDC18-758D-41BC-A626-E7B8EB5225C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83CF613B-E3CE-4D05-8BEC-77298CD70506}.Debug|Any CPU.ActiveCfg = Debug
+		{83CF613B-E3CE-4D05-8BEC-77298CD70506}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

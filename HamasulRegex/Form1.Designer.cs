@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnFile = new System.Windows.Forms.Button();
             this.opfDialog = new System.Windows.Forms.OpenFileDialog();
             this.txtPath = new System.Windows.Forms.TextBox();
@@ -94,6 +95,7 @@
             this.Controls.Add(this.numRegistros);
             this.Controls.Add(this.txtPath);
             this.Controls.Add(this.btnFile);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Extractor";
