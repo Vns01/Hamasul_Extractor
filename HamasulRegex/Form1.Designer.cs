@@ -30,11 +30,15 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.opfDialog = new System.Windows.Forms.OpenFileDialog();
+            this.txtPath = new System.Windows.Forms.TextBox();
+            this.numRegistros = new System.Windows.Forms.NumericUpDown();
+            this.lblQntd = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.numRegistros)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(306, 37);
+            this.button1.Location = new System.Drawing.Point(306, 45);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(40, 27);
             this.button1.TabIndex = 0;
@@ -47,15 +51,50 @@
             this.opfDialog.FileName = "Selecione um arquivo texto";
             this.opfDialog.InitialDirectory = "c:\\\\";
             // 
+            // txtPath
+            // 
+            this.txtPath.Enabled = false;
+            this.txtPath.Location = new System.Drawing.Point(34, 50);
+            this.txtPath.Name = "txtPath";
+            this.txtPath.Size = new System.Drawing.Size(250, 22);
+            this.txtPath.TabIndex = 1;
+            // 
+            // numRegistros
+            // 
+            this.numRegistros.Location = new System.Drawing.Point(163, 104);
+            this.numRegistros.Name = "numRegistros";
+            this.numRegistros.Size = new System.Drawing.Size(120, 22);
+            this.numRegistros.TabIndex = 2;
+            this.numRegistros.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // lblQntd
+            // 
+            this.lblQntd.AutoSize = true;
+            this.lblQntd.Location = new System.Drawing.Point(34, 106);
+            this.lblQntd.Name = "lblQntd";
+            this.lblQntd.Size = new System.Drawing.Size(123, 17);
+            this.lblQntd.TabIndex = 3;
+            this.lblQntd.Text = "Qntd de Registros";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(378, 301);
+            this.ClientSize = new System.Drawing.Size(372, 183);
+            this.Controls.Add(this.lblQntd);
+            this.Controls.Add(this.numRegistros);
+            this.Controls.Add(this.txtPath);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Extractor";
+            ((System.ComponentModel.ISupportInitialize)(this.numRegistros)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -63,6 +102,9 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.OpenFileDialog opfDialog;
+        private System.Windows.Forms.TextBox txtPath;
+        private System.Windows.Forms.NumericUpDown numRegistros;
+        private System.Windows.Forms.Label lblQntd;
     }
 }
 

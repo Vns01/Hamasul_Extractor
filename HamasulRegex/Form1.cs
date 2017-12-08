@@ -19,6 +19,8 @@ namespace HamasulRegex
         string pattern_LinhasDestinatario = @"((^05;.*\n)+)";
         string pattern_QuebraLinhas = @"\n";
         string pattern_Protocolo = @"((^00;.*\n)+)(^00T.*\n){1}";
+        string FileName = "Hamasul_Modelo.txt";
+        
 
         public Form1()
         {
@@ -29,43 +31,53 @@ namespace HamasulRegex
         {
             if(opfDialog.ShowDialog() == DialogResult.OK && opfDialog.FileName.Length > 0)
             {
-                st = new StringBuilder();
-                Regex regex_QuebraArquivos = new Regex(pattern_QuebraArquivos, RegexOptions.Multiline);
-                Regex regex_LinhasDestinatario = new Regex(pattern_LinhasDestinatario, RegexOptions.Multiline);
-                Regex regex_QuebraLinhas = new Regex(pattern_QuebraLinhas, RegexOptions.Multiline);
-                Regex regex_Protocolo = new Regex(pattern_Protocolo, RegexOptions.Multiline);
+                if (MessageBox.Show($"O modelo será gerado com base no arquivo {opfDialog.FileName}", "Clique SIM para continuar e Não para sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    txtPath.Text += opfDialog.FileName;
+                    st = new StringBuilder();
+                    Regex regex_QuebraArquivos = new Regex(pattern_QuebraArquivos, RegexOptions.Multiline);
+                    Regex regex_LinhasDestinatario = new Regex(pattern_LinhasDestinatario, RegexOptions.Multiline);
+                    Regex regex_QuebraLinhas = new Regex(pattern_QuebraLinhas, RegexOptions.Multiline);
+                    Regex regex_Protocolo = new Regex(pattern_Protocolo, RegexOptions.Multiline);
 
-                //Lê o arquivo
-                string texto = File.ReadAllText(opfDialog.FileName, Encoding.GetEncoding(CultureInfo.GetCultureInfo("pt-BR").TextInfo.ANSICodePage));
+                    //Lê o arquivo
+                    string texto = File.ReadAllText(opfDialog.FileName, Encoding.GetEncoding(CultureInfo.GetCultureInfo("pt-BR").TextInfo.ANSICodePage));
 
-                MatchCollection match2 = regex_Protocolo.Matches(texto);
-                st.Append(match2[0].Groups[0].ToString());
+                    MatchCollection match2 = regex_Protocolo.Matches(texto);
+                    st.Append(match2[0].Groups[0].ToString());
 
-                //Efetua primeiro match
-                MatchCollection match = regex_QuebraArquivos.Matches(texto);
+                    //Efetua primeiro match
+                    MatchCollection match = regex_QuebraArquivos.Matches(texto);
 
-                string[] array;
-                string aux = "";
+                    string[] array;
+                    string aux = "";
 
-                for (int i = 0; i < match.Count; i++)
-                    for (int j = 1; j < match[i].Groups.Count; j++)
-                    {
-                        if (regex_LinhasDestinatario.IsMatch(match[i].Groups[j].ToString()))
+                    for (int i = 0; i < match.Count; i++)
+                        for (int j = 1; j < match[i].Groups.Count; j++)
                         {
-                            array = regex_QuebraLinhas.Split(match[i].Groups[j].ToString(), 6);
+                            if (regex_LinhasDestinatario.IsMatch(match[i].Groups[j].ToString()))
+                            {
+                                array = regex_QuebraLinhas.Split(match[i].Groups[j].ToString(), (int)numRegistros.Value + 1);
 
-                            aux = addString(array);
+                                aux = addString(array);
 
-                            st.AppendLine(aux);
+                                st.AppendLine(aux);
 
+                            }
+                            else
+                                st.Append(match[i].Groups[j]);
                         }
-                        else
-                            st.Append(match[i].Groups[j]);
-                    }
 
-            
-                criarArquivo(st.ToString(), $"{retornaNomeDiretorioAtual(opfDialog.FileName)}\\Hamasul_Modelo.txt");
+                    criarArquivo(st.ToString(), $"{retornaNomeDiretorioAtual(opfDialog.FileName)}\\{FileName}");
+                    MessageBox.Show($"O arquivo {FileName} foi gerado com sucesso.", "Concluído!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    clear();
+                }
             }
+        }
+
+        private void clear()
+        {
+            txtPath.Text = "";
         }
 
         private void criarArquivo(string text, string path)
@@ -75,17 +87,6 @@ namespace HamasulRegex
 
             File.WriteAllText(path, text, Encoding.GetEncoding(CultureInfo.GetCultureInfo("pt-BR").TextInfo.ANSICodePage));
 
-            //using (StreamReader str = new StreamReader(text, Encoding.GetEncoding(CultureInfo.GetCultureInfo("pt-BR").TextInfo.ANSICodePage)))
-            //{
-            //    string linha = string.Empty;
-            //    using (StreamWriter stw = new StreamWriter(path))
-            //    {
-            //        while ((linha = str.ReadLine()) != null)
-            //        {
-            //            stw.Write(linha);
-            //        }
-            //    }
-            //}
         }
 
         private string retornaNomeDiretorioAtual(string fileName)
@@ -98,8 +99,17 @@ namespace HamasulRegex
         {
             string aux = "";
 
-            for (int k = 0; k < 5; k++)
-                aux += $"{array[k]}\n";
+            if (array.Length <= numRegistros.Value)
+            {
+                for (int i = 0; i < array.Length-1; i++)
+                {
+                    aux += $"{array[i]}\n";
+                }
+            }
+            else
+                for (int i= 0; i < numRegistros.Value; i++)
+                    aux += $"{array[i]}\n";
+
             return aux;
         }
     }
