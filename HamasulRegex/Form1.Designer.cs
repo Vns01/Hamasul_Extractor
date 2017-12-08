@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnFile = new System.Windows.Forms.Button();
             this.opfDialog = new System.Windows.Forms.OpenFileDialog();
             this.txtPath = new System.Windows.Forms.TextBox();
             this.numRegistros = new System.Windows.Forms.NumericUpDown();
@@ -36,15 +36,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.numRegistros)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // btnFile
             // 
-            this.button1.Location = new System.Drawing.Point(306, 45);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(40, 27);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "...";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnFile.Location = new System.Drawing.Point(306, 45);
+            this.btnFile.Name = "btnFile";
+            this.btnFile.Size = new System.Drawing.Size(40, 27);
+            this.btnFile.TabIndex = 0;
+            this.btnFile.Text = "...";
+            this.btnFile.UseVisualStyleBackColor = true;
+            this.btnFile.Click += new System.EventHandler(this.button1_Click);
             // 
             // opfDialog
             // 
@@ -62,6 +62,11 @@
             // numRegistros
             // 
             this.numRegistros.Location = new System.Drawing.Point(163, 104);
+            this.numRegistros.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numRegistros.Name = "numRegistros";
             this.numRegistros.Size = new System.Drawing.Size(120, 22);
             this.numRegistros.TabIndex = 2;
@@ -88,7 +93,7 @@
             this.Controls.Add(this.lblQntd);
             this.Controls.Add(this.numRegistros);
             this.Controls.Add(this.txtPath);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnFile);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Extractor";
@@ -100,7 +105,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnFile;
         private System.Windows.Forms.OpenFileDialog opfDialog;
         private System.Windows.Forms.TextBox txtPath;
         private System.Windows.Forms.NumericUpDown numRegistros;
