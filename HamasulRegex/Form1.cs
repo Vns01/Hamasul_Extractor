@@ -31,6 +31,12 @@ namespace HamasulRegex
         {
             if(opfDialog.ShowDialog() == DialogResult.OK && opfDialog.FileName.Length > 0)
             {
+                
+                st = new StringBuilder();
+                Regex regex_QuebraArquivos = new Regex(pattern_QuebraArquivos, RegexOptions.Multiline);
+                Regex regex_LinhasDestinatario = new Regex(pattern_LinhasDestinatario, RegexOptions.Multiline);
+                Regex regex_QuebraLinhas = new Regex(pattern_QuebraLinhas, RegexOptions.Multiline);
+                Regex regex_Protocolo = new Regex(pattern_Protocolo, RegexOptions.Multiline);
                 if (MessageBox.Show($"O modelo será gerado com base no arquivo {opfDialog.FileName}", "Clique SIM para continuar e Não para sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     txtPath.Text += opfDialog.FileName;
