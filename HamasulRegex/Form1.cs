@@ -29,6 +29,7 @@ namespace HamasulRegex
         {
             if(opfDialog.ShowDialog() == DialogResult.OK && opfDialog.FileName.Length > 0)
             {
+                //teste
                 st = new StringBuilder();
                 Regex regex_QuebraArquivos = new Regex(pattern_QuebraArquivos, RegexOptions.Multiline);
                 Regex regex_LinhasDestinatario = new Regex(pattern_LinhasDestinatario, RegexOptions.Multiline);
