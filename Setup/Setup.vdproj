@@ -46,7 +46,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_AA324397C435D1D9EAF13BF514C8572B"
+        "OwnerKey" = "8:_0DF19872E9FD4891AE1E01C1076BE76C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -58,7 +58,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_0DF19872E9FD4891AE1E01C1076BE76C"
+        "OwnerKey" = "8:_AA324397C435D1D9EAF13BF514C8572B"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -79,6 +79,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -95,6 +111,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -181,17 +205,6 @@
         }
         "Folder"
         {
-            "{1525181F-901A-416C-8A58-119130FE478E}:_39A5FC8731394048BF8EBA76A94708A6"
-            {
-            "Name" = "8:#1921"
-            "AlwaysCreate" = "11:FALSE"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Property" = "8:StartMenuFolder"
-                "Folders"
-                {
-                }
-            }
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_39BD686807B84CAC8251F4F5BB40D343"
             {
             "DefaultLocation" = "8:[ProgramFilesFolder][Manufacturer]\\[ProductName]"
@@ -200,6 +213,17 @@
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Property" = "8:TARGETDIR"
+                "Folders"
+                {
+                }
+            }
+            "{1525181F-901A-416C-8A58-119130FE478E}:_40D4EABB3A01441E8D521204132B050D"
+            {
+            "Name" = "8:#1921"
+            "AlwaysCreate" = "11:FALSE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Property" = "8:StartMenuFolder"
                 "Folders"
                 {
                 }
@@ -241,16 +265,16 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:Extractor Hamasul"
-        "ProductCode" = "8:{94F3853E-9EB2-4A08-BB13-BA32A3060C2F}"
-        "PackageCode" = "8:{DBCB1496-05E7-4641-A214-71CA07AC4942}"
+        "ProductName" = "8:Extractor_Hamasul"
+        "ProductCode" = "8:{14BE1AC8-D23F-4946-96F1-67C3074A3CB7}"
+        "PackageCode" = "8:{0654638B-087B-4EA9-BA69-1E56EBEE97B3}"
         "UpgradeCode" = "8:{B47CE258-A5A8-4F53-92B0-DA475ED280AB}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
-        "RemovePreviousVersions" = "11:FALSE"
+        "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:4.0.0"
         "Manufacturer" = "8:Site Printer"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -363,31 +387,17 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_09063361D122462CAB43E01A78BDE604"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_9300BE3B3FCF4D6AB906669FA2F7CDFA"
             {
-            "Name" = "8:Extractor Hamasul"
+            "Name" = "8:Extractor_Hamasul"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_39BD686807B84CAC8251F4F5BB40D343"
-            "Folder" = "8:_AD733D1A8B8944DCB7F4F5F52A2D3BF3"
+            "Target" = "8:_0DF19872E9FD4891AE1E01C1076BE76C"
+            "Folder" = "8:_40D4EABB3A01441E8D521204132B050D"
             "WorkingFolder" = "8:_39BD686807B84CAC8251F4F5BB40D343"
-            "Icon" = "8:_7859083B11BC4BA8BCE76B1BE2523E60"
-            "Feature" = "8:"
-            }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_36E8A8B5685F4049A464775410072DE5"
-            {
-            "Name" = "8:Extractor Hamasul"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_39A5FC8731394048BF8EBA76A94708A6"
-            "Folder" = "8:_39A5FC8731394048BF8EBA76A94708A6"
-            "WorkingFolder" = "8:_39A5FC8731394048BF8EBA76A94708A6"
             "Icon" = "8:_7859083B11BC4BA8BCE76B1BE2523E60"
             "Feature" = "8:"
             }
@@ -445,9 +455,55 @@
             "Attributes" = "3:1"
                 "Dialogs"
                 {
-                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_361332AAE9244AB9A05CF0E50EA14ADC"
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_27B31F36C2B24A90A3A92D8686B6933D"
                     {
                     "Sequence" = "3:200"
+                    "DisplayName" = "8:Contrato de Licença"
+                    "UseDynamicProperties" = "11:TRUE"
+                    "IsDependency" = "11:FALSE"
+                    "SourcePath" = "8:<VsdDialogDir>\\VsdAdminLicenseDlg.wid"
+                        "Properties"
+                        {
+                            "BannerBitmap"
+                            {
+                            "Name" = "8:BannerBitmap"
+                            "DisplayName" = "8:#1001"
+                            "Description" = "8:#1101"
+                            "Type" = "3:8"
+                            "ContextData" = "8:Bitmap"
+                            "Attributes" = "3:4"
+                            "Setting" = "3:1"
+                            "UsePlugInResources" = "11:TRUE"
+                            }
+                            "EulaText"
+                            {
+                            "Name" = "8:EulaText"
+                            "DisplayName" = "8:#1008"
+                            "Description" = "8:#1108"
+                            "Type" = "3:6"
+                            "ContextData" = "8:"
+                            "Attributes" = "3:0"
+                            "Setting" = "3:0"
+                            "UsePlugInResources" = "11:TRUE"
+                            }
+                            "Sunken"
+                            {
+                            "Name" = "8:Sunken"
+                            "DisplayName" = "8:#1007"
+                            "Description" = "8:#1107"
+                            "Type" = "3:5"
+                            "ContextData" = "8:4;True=4;False=0"
+                            "Attributes" = "3:0"
+                            "Setting" = "3:0"
+                            "Value" = "3:4"
+                            "DefaultValue" = "3:4"
+                            "UsePlugInResources" = "11:TRUE"
+                            }
+                        }
+                    }
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_361332AAE9244AB9A05CF0E50EA14ADC"
+                    {
+                    "Sequence" = "3:300"
                     "DisplayName" = "8:Pasta de Instalação"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
@@ -517,7 +573,7 @@
                     }
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_C8ABC9853773482B8D8BAA1FDBECDBB4"
                     {
-                    "Sequence" = "3:300"
+                    "Sequence" = "3:400"
                     "DisplayName" = "8:Confirmar Instalação"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
